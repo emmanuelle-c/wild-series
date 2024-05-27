@@ -2,18 +2,14 @@ const express = require("express");
 
 const router = express.Router();
 
-
 /* ************************************************************************* */
 // Define Your API Routes Here
 /* ************************************************************************* */
+const { browse, search } = require("../../../controllers/categoryActions")
 
-// Import item-related actions
-const { browse, read } = require("../../../controllers/programActions");
-
-// Route to get a list of items
+/* Here you code */
 router.get("/", browse);
-router.get("/:id", read);
-
+router.get("/:id", search);
 /* ************************************************************************* */
 
 module.exports = router;
